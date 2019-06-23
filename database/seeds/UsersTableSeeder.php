@@ -17,5 +17,9 @@ class UsersTableSeeder extends Seeder
             'email' => 'admin@datoriki.runa',
             'password' => bcrypt('secret'),
             'role' => 2));
+        User::create(array('name' => 'Testeris Polimorfs',
+            'email' => 'testeris@datoriki.runa',
+            'password' => bcrypt('secret'),
+            'role' => 1));
     }
 }

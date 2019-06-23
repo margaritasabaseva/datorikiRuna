@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TopicController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('topic', 'TopicController', ['only' => ['create', 'store']]);
+Route::resource('discussion', 'DiscussionController', ['except' => ['edit', 'update', 'destroy']]);
+Route::get('admin', 'AdminController');
+
+
